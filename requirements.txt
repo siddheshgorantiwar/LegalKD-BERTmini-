@@ -1,0 +1,8 @@
+torch==2.8.0+cu126
+transformers==4.56.1
+datasets==4.0.0
+tokenizers==0.22.0
+numpy==2.0.2
+scikit-learn==1.6.1
+pandas==2.2.2
+tqdm==4.67.1
