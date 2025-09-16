@@ -51,7 +51,7 @@ Automated classification of legal contract clauses is critical for legal analyti
 - Metrics:  
     - Accuracy
     - Macro F1 
-    - Weighted F1:  
+    - Weighted F1 
 
 ***
 
@@ -101,14 +101,6 @@ code/                             # All development and experiment code
 │   1_finetuning_teacher_on_LEDGAR.ipynb   # Fine-tune LegalBERT (teacher) on LEDGAR
 │   2_KD_on_student.ipynb                  # Knowledge distillation of student from teacher
 
-Final_teacher_model/              # Saved teacher model (LegalBERT, fine-tuned)
-│   config.json
-│   model.safetensors
-│   special_tokens_map.json
-│   tokenizer_config.json
-│   tokenizer.json
-│   training_args.bin
-│   vocab.txt
 
 Performance Analysis Report_Knowledge Distillation for Legal Clause Classification.pdf
                                   # In-depth comparative report of experiments, methodology, and results
