@@ -40,12 +40,14 @@ Automated classification of legal contract clauses is critical for legal analyti
 **4.1 Teacher Fine-Tuning:**  
 - LegalBERT is fine-tuned on LEDGAR with class weighting to counter severe class imbalance.
 - Model selection uses Macro F1 on the validation set.
+- find the fine tuned teacher model at https://huggingface.co/siddheshg/Legal-Distill-BERTmini
 
 **4.2 Knowledge Distillation:**  
 - Initialized student (`BERT-mini`) with a randomly initialized classification head (100 classes).
 - Custom loss combines (see [Hinton et al., 2015](https://arxiv.org/abs/1503.02531)):  
     - Weighted cross-entropy (hard labels):  
     - KL-divergence between student and teacher soft predictions:  
+- trained student model can be found in repository
 
 **4.3 Evaluation:**  
 - Metrics:  
