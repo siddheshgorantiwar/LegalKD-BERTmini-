@@ -45,7 +45,7 @@ Automated classification of legal contract clauses is critical for legal analyti
 - Initialized student (`BERT-mini`) with a randomly initialized classification head (100 classes).
 - Custom loss combines (see [Hinton et al., 2015](https://arxiv.org/abs/1503.02531)):  
     - Weighted cross-entropy (hard labels):  
-    - KL-divergence between student and teacher soft predictions (temperature $$ T $$):  
+    - KL-divergence between student and teacher soft predictions:  
 
 **4.3 Evaluation:**  
 - Metrics:  
