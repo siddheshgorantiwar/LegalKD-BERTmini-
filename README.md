@@ -45,34 +45,13 @@ Automated classification of legal contract clauses is critical for legal analyti
 - Initialized student (`BERT-mini`) with a randomly initialized classification head (100 classes).
 - Custom loss combines (see [Hinton et al., 2015](https://arxiv.org/abs/1503.02531)):  
     - Weighted cross-entropy (hard labels):  
-      $$
-      CE(\mathbf{s},\mathbf{y}) = - \sum_{c=1}^C w_c \, y_c \log \sigma(\mathbf{s})_c
-      $$
-      where $$ \mathbf{s} $$ are student logits, $$ \mathbf{y} $$ is the one-hot label, $$ w_c $$ is class weight, and $$ \sigma $$ is softmax.
     - KL-divergence between student and teacher soft predictions (temperature $$ T $$):  
-      $$
-      KL(\mathbf{s}, \mathbf{t}) = T^2 \sum_{c=1}^C \sigma(\mathbf{t}/T)_c \log \left( \frac{\sigma(\mathbf{t}/T)_c}{\sigma(\mathbf{s}/T)_c} \right)
-      $$
-      where $$ \mathbf{t} $$ are teacher logits.
-    - Total (distillation) loss:
-      $$
-      \mathcal{L}_{KD} = \alpha \cdot KL(\mathbf{s}, \mathbf{t}) + (1-\alpha) \cdot CE(\mathbf{s}, \mathbf{y})
-      $$
-      ($$ \alpha,\;T $$ are hyperparameters)
 
 **4.3 Evaluation:**  
 - Metrics:  
-    - **Accuracy**: $$ \text{Accuracy} = \frac{TP+TN}{TP+TN+FP+FN} $$
-    - **Macro F1**:  
-      $$
-      \text{Macro-F1} = \frac{1}{C} \sum_{c=1}^C F1_c
-      $$
-      (where $$ F1_c $$ is the F1-score for class $$c$$)
-    - **Weighted F1**:  
-      $$
-      \text{Weighted-F1} = \sum_{c=1}^C w_c F1_c
-      $$
-      (where $$ w_c $$ is the support of class $$c$$)
+    - Accuracy
+    - Macro F1 
+    - Weighted F1:  
 
 ***
 
